@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Profil Diri Siswa</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(180deg, #e9f7ff, #ffffff);
+    margin: 0;
+    color: #444;
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+    background: #d6f0ff;
+    padding: 14px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(180,220,255,.5);
+}
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+nav a {
+    text-decoration: none;
+    background: #eef9ff;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #3a7bd5;
+    transition: .3s;
+}
+nav a:hover {
+    transform: scale(1.2) rotate(-4deg);
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #dff4ff, #c6eaff);
+    border-radius: 0 0 70px 70px;
+    position: relative;
+    overflow: hidden;
+}
+.cloud {
+    position: absolute;
+    font-size: 70px;
+    opacity: .3;
+    animation: cloudFloat 8s ease-in-out infinite;
+}
+.cloud.one { top: 100px; }
+.cloud.two { top: 200px; }
+
+@keyframes cloudFloat {
+    0% { transform: translateX(-10px); }
+    50% { transform: translateX(10px) translateY(-12px); }
+    100% { transform: translateX(-10px); }
+}
+
+/* ===== DOG HEADER ===== */
+.dog {
+    font-size: 75px;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: dogPlay 4.5s ease-in-out infinite;
+}
+@keyframes dogPlay {
+    0% { transform: translate(-50%,0); }
+    50% { transform: translate(-50%,-15px) rotate(6deg); }
+    100% { transform: translate(-50%,0); }
+}
+
+/* ===== AVATAR ===== */
+.avatar {
+    width: 160px;
+    height: 160px;
+    background: #fff;
+    border-radius: 50%;
+    margin: 60px auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 56px;
+    box-shadow: 0 20px 40px rgba(180,220,255,.6);
+    animation: avatarAlive 6s ease-in-out infinite;
+}
+@keyframes avatarAlive {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05) translateY(-10px); }
+    100% { transform: scale(1); }
+}
+
+/* ===== SECTION ===== */
+section {
+    background: #fff;
+    width: 85%;
+    margin: 45px auto;
+    padding: 35px;
+    border-radius: 40px;
+    box-shadow: 0 15px 30px rgba(180,220,255,.4);
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+.card {
+    background: linear-gradient(180deg,#f4fbff,#ffffff);
+    padding: 25px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 25px rgba(180,220,255,.45);
+    transition: .4s;
+}
+.card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 45px rgba(58,123,213,.45);
+}
+.icon {
+    font-size: 42px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+/* ===== HOBI ANIMASI ===== */
+.hobi-nyanyi { animation: singMove 2s infinite; }
+@keyframes singMove {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(6deg); }
+    50% { transform: rotate(-6deg); }
+    100% { transform: rotate(0); }
+}
+.hobi-masak { animation: cookSpin 3s linear infinite; }
+@keyframes cookSpin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+.hobi-travel { animation: flyUp 2.5s ease-in-out infinite; }
+@keyframes flyUp {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0); }
+}
+
+.music {
+    position: absolute;
+    font-size: 18px;
+    animation: musicFloat 2s infinite;
+}
+@keyframes musicFloat {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-25px); opacity: 0; }
+}
+.smoke {
+    position: absolute;
+    top: -10px;
+    animation: smokeUp 2s infinite;
+}
+@keyframes smokeUp {
+    0% { transform: translateY(0); opacity: 0; }
+    50% { opacity: .6; }
+    100% { transform: translateY(-20px); opacity: 0; }
+}
+
+/* ===== RUNNING DOG ===== */
+.runner {
+    position: fixed;
+    bottom: 40px;
+    font-size: 45px;
+    animation: runFunny 11s linear infinite;
+}
+@keyframes runFunny {
+    0% { left:-80px; }
+    50% { left:100vw; transform: scaleX(-1); }
+    100% { left:-80px; transform: scaleX(-1); }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: #dff4ff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 60px 60px 0 0;
+    color: #3a7bd5;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<ul>
+<li><a href="#home">🏠 Home</a></li>
+<li><a href="#biodata">🐶 Biodata</a></li>
+<li><a href="#hobi">🎶 Hobi</a></li>
+<li><a href="#portofolio">🐾 Portofolio</a></li>
+</ul>
+</nav>
+
+<header id="home">
+<h1>Profil Diri Siswa</h1>
+<p>Aktif • Kreatif • Ceria ✨</p>
+<div class="dog">🐶</div>
+<div class="cloud one">☁️</div>
+<div class="cloud two">☁️☁️</div>
+</header>
+
+<div class="avatar">🐶</div>
+
+<section id="biodata">
+<h2>🐶 Biodata</h2>
+<p><b>Nama:</b> Akifa Kirana Askanindya</p>
+<p><b>Tanggal Lahir:</b> 1 Maret 2008</p>
+<p><b>Alamat:</b> Cluster Gladiola Residence</p>
+<p><b>Sekolah:</b> SMA Budi Luhur</p>
+<p><b>Kelas:</b> XII</p>
+</section>
+
+<section id="hobi">
+<h2>🎶 Hobi</h2>
+<div class="cards">
+    <div class="card">
+        <div class="icon hobi-nyanyi">🐶🎤
+            <div class="music">🎵</div>
+        </div>
+        <h3>Nyanyi</h3>
+        <p>Seru-seruan & ekspresi diri</p>
+    </div>
+    <div class="card">
+        <div class="icon hobi-masak">🍳
+            <div class="smoke">💨</div>
+        </div>
+        <h3>Masak</h3>
+        <p>Eksplor resep & rasa</p>
+    </div>
+    <div class="card">
+        <div class="icon hobi-travel">✈️</div>
+        <h3>Traveling</h3>
+        <p>Jalan-jalan cari pengalaman</p>
+    </div>
+</div>
+</section>
+
+<section id="portofolio">
+<h2>🐾 Portofolio Kepemimpinan</h2>
+<div class="cards">
+    <div class="card">
+        <div class="icon">🏅</div>
+        <h3>Anggota SLC</h3>
+        <p>Student Leadership Council</p>
+    </div>
+    <div class="card">
+        <div class="icon">🎤</div>
+        <h3>Acara Sekolah</h3>
+        <p>Mengisi & membantu event sekolah</p>
+    </div>
+    <div class="card">
+        <div class="icon">🤝</div>
+        <h3>Kerja Tim</h3>
+        <p>Kolaborasi aktif</p>
+    </div>
+</div>
+</section>
+
+<footer>
+© Akifa Kirana Askanindya • SMA Budi Luhur 💙
+</footer>
+
+<div class="runner">🐕‍🦺</div>
+
+</body>
+</html>
